@@ -138,8 +138,7 @@ function openVideo(e, item) {
   iframe.allowfullscreen = true;
   player.appendChild(ifrDiv);
   ifrDiv.appendChild(iframe);
-  iframe.src = `http://www.youtube.com/embed/${item.id.videoId}`;
-  console.log('ok');
+  iframe.src = `https://www.youtube.com/embed/${item.id.videoId}`;
   player.style.display = 'block';
   const information = document.body.querySelector('.information');
   player.appendChild(information);
@@ -173,7 +172,6 @@ function fillSection(item, publishDate, views) {
   newSection.querySelector('.published-at').insertAdjacentText('beforeEnd', publishDate);
   newSection.querySelector('.views').insertAdjacentText('beforeEnd', views);
 
-  console.log(item.id.videoId);
   gallery.appendChild(newSection);
   newSection.querySelector('img').addEventListener('click', e => openVideo(e, item));
 }
